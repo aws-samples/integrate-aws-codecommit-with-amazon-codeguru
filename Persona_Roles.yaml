@@ -1,0 +1,86 @@
+Description: Stack to create roles for Code approval
+Resources:
+ CodeGuruPolicy:
+  Type: 'AWS::IAM::ManagedPolicy'
+  Properties:
+    PolicyDocument:
+      Version: "2012-10-17"
+      Statement:
+        - Effect: Allow
+          Action:
+            - "codeguru-reviewer:ListRecommendations"
+          Resource: '*'
+ ApproverWritePolicy:
+  Type: 'AWS::IAM::ManagedPolicy'
+  Properties:
+    PolicyDocument:
+      Version: "2012-10-17"
+      Statement:
+        - Effect: Allow
+          Action:
+           - "codecommit:PostCommentForPullRequest"
+           - "codecommit:UpdatePullRequestApprovalState"
+          Resource: '*'
+ RoleRepositoryAdmin:
+  Type: AWS::IAM::Role
+  Properties: 
+    AssumeRolePolicyDocument:
+      Version: "2012-10-17"
+      Statement:
+        - Effect: Allow
+          Principal:
+            AWS:
+              Ref: AWS::AccountId
+          Action:
+            - 'sts:AssumeRole'
+    Description: RoleRepositoryAdmin
+    ManagedPolicyArns: 
+      - arn:aws:iam::aws:policy/AWSCodeCommitFullAccess
+      - !Ref CodeGuruPolicy
+    RoleName: "RoleRepositoryAdmin"
+ RoleCodeApprover:
+  Type: AWS::IAM::Role
+  Properties: 
+    AssumeRolePolicyDocument:
+      Version: "2012-10-17"
+      Statement:
+        - Effect: Allow
+          Principal:
+            AWS:
+              Ref: AWS::AccountId
+          Action:
+            - 'sts:AssumeRole'
+    Description: RoleCodeApprover
+    ManagedPolicyArns: 
+      - arn:aws:iam::aws:policy/AWSCodeCommitReadOnly
+      - !Ref CodeGuruPolicy
+      - !Ref ApproverWritePolicy
+    RoleName: "RoleCodeApprover"
+ RoleCodeDeveloper:
+  Type: AWS::IAM::Role
+  Properties: 
+    AssumeRolePolicyDocument:
+      Version: "2012-10-17"
+      Statement:
+        - Effect: Allow
+          Principal: 
+            AWS:
+              Ref: AWS::AccountId
+          Action:
+            - 'sts:AssumeRole'
+    Description: RoleCodeDeveloper
+    ManagedPolicyArns: 
+      - arn:aws:iam::aws:policy/AWSCodeCommitPowerUser
+      - arn:aws:iam::aws:policy/AWSCloud9User
+      - !Ref CodeGuruPolicy
+    MaxSessionDuration: 36000
+    Policies:
+     - PolicyName: denyapprovalrule
+       PolicyDocument:
+        Version: '2012-10-17'
+        Statement: 
+          - Effect: Deny
+            Action:
+            - "codecommit:CreatePullRequestApprovalRule"
+            Resource: '*'
+    RoleName: "RoleCodeDeveloper"
