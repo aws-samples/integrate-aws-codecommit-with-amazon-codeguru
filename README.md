@@ -14,7 +14,7 @@ The solution has three personas:
  + **Code approver** – Completes the code review based on the recommendations from CodeGuru and either approves the code or asks for fixes for the issue
 
 ## Prerequisites
-Before we get started, we create an AWS Cloud9 development environment, which we use to check in the Python code for this solution. The sample Python code for the exercise is available in the repository. Download the .py files to a local folder.
+Before we get started, we create an AWS Cloud9 development environment, which we use to check in the Python code for this solution. The sample Python code for the exercise is available in the repository. Download the **.py files** to a local folder.
 
 Complete the following steps to set up the prerequisite resources:
 
@@ -24,7 +24,7 @@ Complete the following steps to set up the prerequisite resources:
 ## Configuring IAM roles and users
 
  + Sign in to the AWS Management Console.
- + Download ‘Persona_Users.yaml’ from repository
+ + Download **Persona_Users.yaml** from repository
  + Navigate to AWS CloudFormation and click on Create Stack drop down to choose With new resouces (Standard).
  + click on Upload a template file to upload file form local.
  + Enter a Stack Name such as ‘Automate-code-reviews-codeguru-blog’.
