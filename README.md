@@ -23,14 +23,14 @@ Complete the following steps to set up the prerequisite resources:
 
 Configuring IAM roles and users
 
-    *Sign in to the AWS Management Console.
-    *Download ‘Persona_Users.yaml’ from repository
-    *Navigate to AWS CloudFormation and click on Create Stack drop down to choose With new resouces (Standard).
-    *click on Upload a template file to upload file form local.
-    *Enter a Stack Name such as ‘Automate-code-reviews-codeguru-blog’.
-    *Enter IAM user’s temp password.
-    *Click Next to all the other default options.
-    *Check mark I acknowledge that AWS CloudFormation might create IAM resources with custom names. Click Create Stack.
+ + Sign in to the AWS Management Console.
+ + Download ‘Persona_Users.yaml’ from repository
+ + Navigate to AWS CloudFormation and click on Create Stack drop down to choose With new resouces (Standard).
+ + click on Upload a template file to upload file form local.
+ + Enter a Stack Name such as ‘Automate-code-reviews-codeguru-blog’.
+ + Enter IAM user’s temp password.
+ + Click Next to all the other default options.
+ + Check mark I acknowledge that AWS CloudFormation might create IAM resources with custom names. Click Create Stack.
 
 This template creates three IAM users for Repository admin, Code Approver, Developer that are required at different steps while following this blog.
 
@@ -39,9 +39,9 @@ Clean up the resources
 
 To avoid incurring future charges, remove the resources created by this solution by
 
-    *[Deleting the stack from the AWS CloudFormation](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-console-delete-stack.html)
-    *[Deleting AWS Cloud9 environment](https://docs.aws.amazon.com/cloud9/latest/user-guide/delete-environment.html)
-    *[Deleting AWS CodeCommit repository](https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-delete-repository.html)
+ + [Deleting the stack from the AWS CloudFormation](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-console-delete-stack.html)
+ + [Deleting AWS Cloud9 environment](https://docs.aws.amazon.com/cloud9/latest/user-guide/delete-environment.html)
+ + [Deleting AWS CodeCommit repository](https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-delete-repository.html)
 
 
 ## Security
