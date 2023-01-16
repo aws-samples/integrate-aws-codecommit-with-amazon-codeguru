@@ -5,7 +5,7 @@ A common problem in software development is accidentally or unintentionally merg
 [Amazon CodeGuru Reviewer](https://aws.amazon.com/codeguru/) tackles this issue using automated code reviews, which allows developers to fix the issue based on automated CodeGuru recommendations before the code moves to production.
 
 The following diagram illustrates the architecture of this solution.
-![Architecture](/inage/architecture.png)
+![Architecture](/image/architecture.png)
 
 The solution has three personas:
 
