@@ -9,9 +9,9 @@ The following diagram illustrates the architecture of this solution.
 
 The solution has three personas:
 
-    Repository admin – Sets up the code repository in CodeCommit
-    Developer – Develops the code and uses pull requests in the main branch to move the code to production
-    Code approver – Completes the code review based on the recommendations from CodeGuru and either approves the code or asks for fixes for the issue
++Repository admin – Sets up the code repository in CodeCommit
++Developer – Develops the code and uses pull requests in the main branch to move the code to production
++Code approver – Completes the code review based on the recommendations from CodeGuru and either approves the code or asks for fixes for the issue
 
 ##Prerequisites
 Before we get started, we create an AWS Cloud9 development environment, which we use to check in the Python code for this solution. The sample Python code for the exercise is available in the repository. Download the .py files to a local folder.
